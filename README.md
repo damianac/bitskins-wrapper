@@ -105,19 +105,15 @@ Allows you to request withdrawal of available balance on your BitSkins account. 
 and it must be over $5.00 USD
 - withdrawal_method: either `bitcoin`, `paypal` or `bank wire`
 
-### buyItem(ids[, prices]) | [doc ref](https://bitskins.com/api#buy_item)
+### buyItem(params) | [doc ref](https://bitskins.com/api#buy_item)
 Allows you to buy the item currently on sale on BitSkins. Item must not be currently be on sale to you. Requires 2FA (Secure Purchases) to be enabled on your account if not logged in.
 
-There are two ways to pass parameters to this method:
-
-1) Pass an array of item ids and prices seperately where each index of one
-array corresponds to the index of the other:
-
-    `buyItem([ id1, id2 ], [ price1, price2 ])`
-
-2) Pass a singular object where each id corresponds to the price
-
-    `buyItem({ id1: price1, id2: price2 })`
+- params: object with these properties:
+  - item_ids: list of item ids to buy - Array
+  - prices: list of prices for the given item ids - Array
+  - app_id (optional): id of the game you're buying item for - Number (Default: CSGO)
+  - auto_trade (optional): Initiate trade for the purchased items - Boolean (Default: true)
+  - allow_trade_delayed_purchases (optional): Buy items on trade delay - Boolean (Default: false)
 
 I would recommend referring to the [official documentation](https://bitskins.com/api#buy_item)
 to confirm the formatting.
