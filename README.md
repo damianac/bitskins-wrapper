@@ -173,7 +173,7 @@ You can use this data to create your own pricing algorithm if you need it.
 
 - market_hash_name: item to get price data for
 
-### getActiveBuyOrders([app_id[ = 730], page[ = 1]]) | [doc ref](https://bitskins.com/api_market_buy_orders)
+### getActiveBuyOrders([app_id[ = 730][, page[ = 1]]]) | [doc ref](https://bitskins.com/api_market_buy_orders)
 Allow you to retrieve active buy orders on the site.
 Parameters are optional
 
