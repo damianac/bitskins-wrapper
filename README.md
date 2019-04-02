@@ -79,6 +79,7 @@ Allows you to retrieve the BitSkins inventory currently on sale. This includes i
   - is_stattrak: either `-1`, `0` or `1`
   - is_souvenir: either `-1`, `0` or `1`
   - per_page: number of results per page, must be between 24 and 480
+  - show_trade_delayed_items: boolean, false if you don't want to display trade delayed
 
   Reference the [official documentation](https://bitskins.com/api#get_inventory_on_sale)
   for this endpoint to test the request.
