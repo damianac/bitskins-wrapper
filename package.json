@@ -1,12 +1,12 @@
 {
   "name": "bitskins-wrapper",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Wrapper for the Bitskins API&Websockets",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Damianac",
   "license": "ISC",
   "dependencies": {
     "notp": "^2.0.3",

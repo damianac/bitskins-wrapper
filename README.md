@@ -3,7 +3,7 @@
 A wrapper for the BitSkins API and Web Sockets.
 
 ```javascript
-const Bitskins = require('bitskins');
+const Bitskins = require('bitskins-wrapper');
 
 const api = new Bitskins.API(apiKey, bitskinsSecret);
 const sockets = new BitSkins.WebSocket();
