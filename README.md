@@ -79,6 +79,7 @@ Allows you to retrieve the BitSkins inventory currently on sale. This includes i
   - is_stattrak: either `-1`, `0` or `1`
   - is_souvenir: either `-1`, `0` or `1`
   - per_page: number of results per page, must be between 24 and 480
+  - show_trade_delayed_items: boolean, false if you don't want to display trade delayed
 
   Reference the [official documentation](https://bitskins.com/api#get_inventory_on_sale)
   for this endpoint to test the request.
@@ -105,19 +106,15 @@ Allows you to request withdrawal of available balance on your BitSkins account. 
 and it must be over $5.00 USD
 - withdrawal_method: either `bitcoin`, `paypal` or `bank wire`
 
-### buyItem(ids[, prices]) | [doc ref](https://bitskins.com/api#buy_item)
+### buyItem(params) | [doc ref](https://bitskins.com/api#buy_item)
 Allows you to buy the item currently on sale on BitSkins. Item must not be currently be on sale to you. Requires 2FA (Secure Purchases) to be enabled on your account if not logged in.
 
-There are two ways to pass parameters to this method:
-
-1) Pass an array of item ids and prices seperately where each index of one
-array corresponds to the index of the other:
-
-    `buyItem([ id1, id2 ], [ price1, price2 ])`
-
-2) Pass a singular object where each id corresponds to the price
-
-    `buyItem({ id1: price1, id2: price2 })`
+- params: object with these properties:
+  - item_ids: list of item ids to buy - Array
+  - prices: list of prices for the given item ids - Array
+  - app_id (optional): id of the game you're buying item for - Number (Default: CSGO)
+  - auto_trade (optional): Initiate trade for the purchased items - Boolean (Default: true)
+  - allow_trade_delayed_purchases (optional): Buy items on trade delay - Boolean (Default: false)
 
 I would recommend referring to the [official documentation](https://bitskins.com/api#buy_item)
 to confirm the formatting.
@@ -176,6 +173,13 @@ Allows you to retrieve raw Steam Community Market price data for a given item.
 You can use this data to create your own pricing algorithm if you need it.
 
 - market_hash_name: item to get price data for
+
+### getActiveBuyOrders([app_id[ = 730][, page[ = 1]]]) | [doc ref](https://bitskins.com/api_market_buy_orders)
+Allow you to retrieve active buy orders on the site.
+Parameters are optional
+
+- app_id (optional): defaults to CS:GO
+- page (optional): defaults to 1 
 
 ## Web Sockets
 
